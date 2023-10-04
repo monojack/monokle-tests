@@ -1,0 +1,18 @@
+apiVersion: monokle.io/v1
+kind: DryRun
+metadata:
+  name: hks
+  annotations:
+    config.kubernetes.io/local-config: true
+data:
+  kind: helm
+  command: template
+  values: 
+    - values.yaml
+    - values-prod.yaml
+  args: 
+    output: resources.yaml
+  postRender:
+    - kind: kustomize
+  include:
+    - kustomization.yaml
