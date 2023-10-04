@@ -1,0 +1,7 @@
+replicas:
+- name: nginx-deployment
+  count: 1
+
+resources:
+  - deployment.yaml
+  - service.yaml
