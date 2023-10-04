@@ -1,4 +1,4 @@
 namespace: my-app
 
 resources:
-  - resources.yaml
+  - templates/pod.yaml
